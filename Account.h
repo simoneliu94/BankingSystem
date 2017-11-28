@@ -17,11 +17,19 @@ class Account
         string get_accountId();
         double get_balance();
         string get_date();
+
         Customer get_customerAcc();
         void view_account();
         void view_customer();
+
         virtual void deposit(double amt, string des);
         virtual void withdraw(double amt, string des);
+
+        virtual void monthly_fee();
+        virtual void daily_interest();
+
+        virtual void trans_charge();
+        virtual void zeroBal_charge();
         void keep_transaction(string trans);
         void print_all_trans();
 

@@ -12,7 +12,7 @@ BusinessChecking::BusinessChecking(string a_id, double a_bal, string a_date, Cus
     charge_rate = 14;
 }
 
-void BusinessChecking::monthly_charge()
+void BusinessChecking::monthly_fee()
 {
     if(balance<3000)
     {

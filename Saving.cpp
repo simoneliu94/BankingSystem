@@ -15,7 +15,7 @@ Saving::Saving(string a_id, double a_bal, string a_date, Customer a_cus):Account
 }
 
 
-void Saving::daily_earn()
+void Saving::daily_interest()
 {
     interest_rate = 0.05/365;
     balance = balance + interest_rate;

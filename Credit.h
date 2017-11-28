@@ -9,10 +9,12 @@ class Credit:public Account
     public:
         Credit();
         Credit(string a_id, double a_bal, string a_date, Customer a_cus);
-        virtual void daily_charge();
-        virtual void trans_charge(double amt);
-        virtual void zeroBal_charge();
-        virtual void monthly_due();
+        void deposit(double amt, string des);
+        void withdraw(double amt, string des);
+        void daily_interest();
+        void trans_charge();
+        void zeroBal_charge();
+        void monthly_fee();
 
 
     protected:

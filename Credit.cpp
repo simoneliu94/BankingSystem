@@ -12,16 +12,43 @@ Credit::Credit(string a_id, double a_bal, string a_date, Customer a_cus):Account
 
 }
 
+void Credit::deposit(double amt, string des)
+{
+    balance = balance + amt;
+    trans_charge();
+    string trans = "Account " + acc_id + ". Deposited $"+ to_string(amt)+". Current balance $"+to_string(balance) + ". Note: " + des;
+    keep_transaction(trans);
+}
 
-void Credit::daily_charge()
+void Credit::withdraw(double amt, string des)
+{
+    if(balance >= amt)
+    {
+        balance = balance - amt;
+        trans_charge();
+        string trans = "Account " + acc_id + ". Withdrew $"+ to_string(amt)+". Current balance $"+to_string(balance) + ". Note: " + des;
+        keep_transaction(trans);
+    }
+    else
+    {
+        cout <<"Account "<< acc_id<< ". Insufficient funds to withdraw" << endl;
+        cout << "-------------------------------------------" << endl;
+    }
+}
+
+void Credit::daily_interest()
 {
     interest_rate = 0.08/365;
     balance = balance - interest_rate;
+    string trans = "Account " + acc_id + ". Daily charge rate $" + to_string(interest_rate)+". Current balance: $"+to_string(balance);
+    keep_transaction(trans);
 }
 
-void Credit::trans_charge(double amt)
+void Credit::trans_charge()
 {
     trans_fee = 0.3;
+    balance = balance - trans_fee;
+
 }
 
 void Credit::zeroBal_charge()
@@ -32,8 +59,10 @@ void Credit::zeroBal_charge()
     }
 }
 
-void Credit::monthly_due()
+void Credit::monthly_fee()
 {
     min_due = balance * 0.0025;
     balance = balance - min_due;
+    string trans = "Account " + acc_id + ". Minimum due this month $" + to_string(min_due)+". Current balance: $"+to_string(balance);
+    keep_transaction(trans);
 }

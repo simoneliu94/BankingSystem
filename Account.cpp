@@ -73,6 +73,25 @@ void Account::withdraw(double amt, string des)
     }
 }
 
+void Account::monthly_fee()
+{
+
+}
+
+void Account::daily_interest()
+{
+
+}
+
+void Account::trans_charge()
+{
+
+}
+void Account::zeroBal_charge()
+{
+
+}
+
 void Account::keep_transaction(string trans)
 {
     list_trans.push_back(trans);

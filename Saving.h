@@ -11,7 +11,7 @@ class Saving:public Account
     public:
         Saving();
         Saving(string a_id, double a_bal, string a_date, Customer a_cus);
-        virtual void daily_earn();
+        void daily_interest();
 
     protected:
 

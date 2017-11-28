@@ -14,7 +14,7 @@ BusinessSaving::BusinessSaving(string a_id, double a_bal, string a_date, Custome
 }
 
 
-void BusinessSaving::daily_earn()
+void BusinessSaving::daily_interest()
 {
     if(balance>=10000)
     {

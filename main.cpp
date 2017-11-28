@@ -38,7 +38,7 @@ int main()
     Checking checking1("C123", 127.25, "2017-11-26", c1);
     Checking checking2("C489", 85.55, "2017-11-22", c1);
     Saving saving3("S4811", 1000.25, "2017-11-20", c2);
-    BusinessChecking b_checking1("BC1234", 2800, "2017-10-18",c2);
+    BusinessChecking b_checking1("BC1234", 2850, "2017-10-18",c2);
     BusinessSaving b_saving1("BS4841",12500,"2017-12-01",c2);
     Credit credit1("CRE123", 420.25, "2017-01-30", c2);
 
@@ -72,19 +72,16 @@ int main()
     checking1.deposit(20, "Testing");
     checking1.deposit(50, "Test2");
     checking2.deposit(92.25, "More money");
-    credit1.withdraw(25, "Pizza money");
+    credit1.deposit(10, "Credit money");
+    credit1.withdraw(5, "Pizza money");
 
-    //Tests monthly
-    //b_checking1.monthly_charge();
-    //b_checking1.view_account();
-    //b_saving1.daily_earn();
-    //b_saving1.view_account();
-
-    checking1.monthly_charge();
-    saving3.daily_earn();
-    b_checking1.monthly_charge();
-    b_saving1.daily_earn();
-
+    //Tests all the interest earnings and fees
+    checking1.monthly_fee();
+    saving3.daily_interest();
+    b_checking1.monthly_fee();
+    b_saving1.daily_interest();
+    credit1.daily_interest();
+    credit1.monthly_fee();
 
     //Prints out all transactions of the selected account
     checking1.print_all_trans();
@@ -93,6 +90,4 @@ int main()
     b_checking1.print_all_trans();
     b_saving1.print_all_trans();
     credit1.print_all_trans();
-
-    //c1.allAccounts();
 }

@@ -14,7 +14,7 @@ Checking::Checking(string a_id, double a_bal, string a_date, Customer a_cus):Acc
     charge_rate = 18;
 }
 
-void Checking::monthly_charge()
+void Checking::monthly_fee()
 {
     balance = balance - charge_rate;
     string trans = "Account " + acc_id + ". Monthly charge rate $" + to_string(charge_rate)+". Current balance: $"+to_string(balance);
