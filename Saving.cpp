@@ -9,7 +9,7 @@ Saving::Saving()
 
 }
 
-Saving::Saving(string a_id, double a_bal, string a_date, Customer a_cus):Account(a_id, a_bal, a_date, a_cus)
+Saving::Saving(string a_id, double a_bal, string a_date, Customer &a_cus):Account(a_id, a_bal, a_date, a_cus)
 {
 
 }

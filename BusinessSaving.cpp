@@ -8,7 +8,7 @@ BusinessSaving::BusinessSaving()
 
 }
 
-BusinessSaving::BusinessSaving(string a_id, double a_bal, string a_date, Customer a_cus):Account(a_id, a_bal, a_date, a_cus)
+BusinessSaving::BusinessSaving(string a_id, double a_bal, string a_date, Customer &a_cus):Account(a_id, a_bal, a_date, a_cus)
 {
 
 }

@@ -7,7 +7,7 @@ Credit::Credit()
 
 }
 
-Credit::Credit(string a_id, double a_bal, string a_date, Customer a_cus):Account(a_id, a_bal, a_date, a_cus)
+Credit::Credit(string a_id, double a_bal, string a_date, Customer &a_cus):Account(a_id, a_bal, a_date, a_cus)
 {
 
 }
@@ -53,7 +53,7 @@ void Credit::trans_charge()
 
 void Credit::zeroBal_charge()
 {
-    if(balance=0)
+    if(balance==0)
     {
         balance = balance - 25;
     }

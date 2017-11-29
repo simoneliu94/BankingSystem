@@ -6,23 +6,23 @@
 
 class Credit:public Account
 {
-    public:
-        Credit();
-        Credit(string a_id, double a_bal, string a_date, Customer a_cus);
-        void deposit(double amt, string des);
-        void withdraw(double amt, string des);
-        void daily_interest();
-        void trans_charge();
-        void zeroBal_charge();
-        void monthly_fee();
+public:
+    Credit();
+    Credit(string a_id, double a_bal, string a_date, Customer &a_cus);
+    void deposit(double amt, string des);
+    void withdraw(double amt, string des);
+    void daily_interest();
+    void trans_charge();
+    void zeroBal_charge();
+    void monthly_fee();
 
 
-    protected:
+protected:
 
-    private:
-        double interest_rate;
-        double min_due;
-        double trans_fee;
+private:
+    double interest_rate;
+    double min_due;
+    double trans_fee;
 };
 
 #endif // CREDIT_H

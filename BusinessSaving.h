@@ -8,15 +8,15 @@ using namespace std;
 
 class BusinessSaving:public Account
 {
-    public:
-        BusinessSaving();
-        BusinessSaving(string a_id, double a_bal, string a_date, Customer a_cus);
-        void daily_interest();
+public:
+    BusinessSaving();
+    BusinessSaving(string a_id, double a_bal, string a_date, Customer &a_cus);
+    void daily_interest();
 
-    protected:
+protected:
 
-    private:
-        double interest_rate;
+private:
+    double interest_rate;
 };
 
 

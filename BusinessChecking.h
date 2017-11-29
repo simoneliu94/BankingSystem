@@ -9,15 +9,15 @@ using namespace std;
 
 class BusinessChecking:public Account
 {
-    public:
-        BusinessChecking();
-        BusinessChecking(string a_id, double a_bal, string a_date, Customer a_cus);
-        void monthly_fee();
+public:
+    BusinessChecking();
+    BusinessChecking(string a_id, double a_bal, string a_date, Customer &a_cus);
+    void monthly_fee();
 
-    protected:
+protected:
 
-    private:
-        double charge_rate;
+private:
+    double charge_rate;
 };
 
 #endif // BUSINESSCHECKING_H

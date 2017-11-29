@@ -9,18 +9,19 @@ using namespace std;
 
 class Checking:public Account
 {
-    public:
-        Checking();
-        Checking(string a_id, double a_bal, string a_date, Customer a_cus);
-        void monthly_fee();
-        void link_saving(Account &saving);
-        void withdraw(double amt, string des);
+public:
+    Checking();
+    Checking(string a_id, double a_bal, string a_date, Customer &a_cus);
+    void monthly_fee();
+    void link_saving(Account &saving);
+    void withdraw(double amt, string des);
 
-    protected:
+protected:
 
-    private:
-        double charge_rate;
-        Account* saving_acc;
+private:
+    double charge_rate;
+    double overdraft_fee;
+    Account* saving_acc;
 };
 
 #endif // CHECKING_H

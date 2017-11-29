@@ -83,7 +83,7 @@ int main()
     checking1.deposit(20, "Deposit Testing");
     checking2.deposit(92.25, "More money");
     checking1.withdraw(800, "Overdraft testing");
-    checking1.withdraw(20, "overdraft again");
+    checking1.withdraw(215, "overdraft again");
     credit1.deposit(10, "Credit money");
     credit1.withdraw(5, "Pizza money");
 

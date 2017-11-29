@@ -7,15 +7,14 @@ Account::Account()
     acc_id = "";
     balance = 0;
     date = "";
-    cust = Customer();
 }
 
-Account::Account(string a_id, double a_bal, string a_date, Customer a_cus)
+Account::Account(string a_id, double a_bal, string a_date, Customer &a_cus)
 {
     acc_id = a_id;
     balance = a_bal;
     date = a_date;
-    cust = a_cus;
+    cust = &a_cus;
 }
 
 string Account::get_accountId()
@@ -33,11 +32,6 @@ string Account::get_date()
     return date;
 }
 
-Customer Account::get_customerAcc()
-{
-    return cust;
-}
-
 void Account::view_account()
 {
     cout << "Account id: " << acc_id << endl;
@@ -48,7 +42,7 @@ void Account::view_account()
 
 void Account::view_customer()
 {
-    cust.viewInfo();
+    cust->viewInfo();
 }
 
 void Account::deposit(double amt, string des)
@@ -87,6 +81,8 @@ void Account::trans_charge()
 {
 
 }
+
+
 void Account::zeroBal_charge()
 {
 
