@@ -8,7 +8,7 @@ class Credit:public Account
 {
 public:
     Credit();
-    Credit(string a_id, double a_bal, string a_date, Customer &a_cus);
+    Credit(string a_id, double a_bal, double lim, string a_date, Customer &a_cus);
     void deposit(double amt, string des);
     void withdraw(double amt, string des);
     void daily_interest();
@@ -20,6 +20,7 @@ public:
 protected:
 
 private:
+    double limit;
     double interest_rate;
     double min_due;
     double trans_fee;

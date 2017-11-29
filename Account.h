@@ -29,12 +29,14 @@ public:
 
     virtual void trans_charge();
     virtual void zeroBal_charge();
+
     void keep_transaction(string trans);
     void print_all_trans();
 
 protected:
     string acc_id;
     double balance;
+    double limit;
     string date;
     Customer* cust;
     list<string> list_trans;

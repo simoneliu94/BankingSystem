@@ -16,7 +16,8 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello Simone!" << endl;
+    cout << "Written by Y Liu" << endl;
+    cout << "Welcome to Liu's Banking System" << endl;
     cout << "-------------------------------------------" << endl;
 
     //Creates a customer
@@ -40,7 +41,7 @@ int main()
     Saving saving3("S4811", 1000, "2017-11-20", c1);
     BusinessChecking b_checking1("BC1234", 2850, "2017-10-18",c2);
     BusinessSaving b_saving1("BS4841",12500,"2017-12-01",c2);
-    Credit credit1("CRE123", 420.25, "2017-01-30", c2);
+    Credit credit1("CRE123", 0, 5000, "2017-01-30", c2);
 
     //Views the accountID, balance and opening date
     checking1.view_account();
@@ -85,7 +86,7 @@ int main()
     checking1.withdraw(800, "Overdraft testing");
     checking1.withdraw(215, "overdraft again");
     credit1.deposit(10, "Credit money");
-    credit1.withdraw(5, "Pizza money");
+    credit1.withdraw(25, "Pizza money");
 
     //Prints out all transactions of the selected account
     checking1.print_all_trans();
