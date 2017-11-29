@@ -21,5 +21,38 @@ void Checking::monthly_fee()
     keep_transaction(trans);
 }
 
+void Checking::link_saving(Account &saving)
+{
+    saving_acc = &saving;
+}
+
+void Checking::withdraw(double amt, string des)
+{
+    if(balance >= amt)
+    {
+        balance = balance - amt;
+        string trans = "Account " + acc_id + ". Withdrew $"+ to_string(amt)+". Current balance $"+to_string(balance) + ". Note: " + des;
+        keep_transaction(trans);
+    }
+    else
+    {
+        double remaining = amt - balance;
+        if (saving_acc->get_balance() >= remaining)
+        {
+            balance = balance - (amt - remaining);
+
+            saving_acc->withdraw(remaining,"Remaining funds from Checking account");
+
+            string trans = "Account " + acc_id + ". Withdrew $"+ to_string(amt-remaining)+". Current balance $"+to_string(balance) + ". Note: " + des;
+            keep_transaction(trans);
+        }
+        else
+        {
+            cout <<"Overdraft. Insufficient funds to withdraw" << endl;
+            cout << "-------------------------------------------" << endl;
+        }
+    }
+}
+
 
 

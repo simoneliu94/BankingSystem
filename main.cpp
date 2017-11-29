@@ -37,7 +37,7 @@ int main()
     //Creates different types of accounts
     Checking checking1("C123", 127.25, "2017-11-26", c1);
     Checking checking2("C489", 85.55, "2017-11-22", c1);
-    Saving saving3("S4811", 1000.25, "2017-11-20", c2);
+    Saving saving3("S4811", 1000, "2017-11-20", c1);
     BusinessChecking b_checking1("BC1234", 2850, "2017-10-18",c2);
     BusinessSaving b_saving1("BS4841",12500,"2017-12-01",c2);
     Credit credit1("CRE123", 420.25, "2017-01-30", c2);
@@ -53,7 +53,7 @@ int main()
     //Adds accounts to the customers
     c1.addAccount(&checking1);
     c1.addAccount(&checking2);
-    c2.addAccount(&saving3);
+    c1.addAccount(&saving3);
     c2.addAccount(&b_checking1);
     c2.addAccount(&b_saving1);
     c2.addAccount(&credit1);
@@ -68,12 +68,8 @@ int main()
     vector<Account> Accounts;
     Accounts.push_back(checking1);
 
-    //Tests deposit and withdraw functions
-    checking1.deposit(20, "Testing");
-    checking1.deposit(50, "Test2");
-    checking2.deposit(92.25, "More money");
-    credit1.deposit(10, "Credit money");
-    credit1.withdraw(5, "Pizza money");
+    //Links checking account to saving account
+    checking1.link_saving(saving3);
 
     //Tests all the interest earnings and fees
     checking1.monthly_fee();
@@ -82,6 +78,14 @@ int main()
     b_saving1.daily_interest();
     credit1.daily_interest();
     credit1.monthly_fee();
+
+    //Tests deposit and withdraw functions
+    checking1.deposit(20, "Deposit Testing");
+    checking2.deposit(92.25, "More money");
+    checking1.withdraw(800, "Overdraft testing");
+    checking1.withdraw(20, "overdraft again");
+    credit1.deposit(10, "Credit money");
+    credit1.withdraw(5, "Pizza money");
 
     //Prints out all transactions of the selected account
     checking1.print_all_trans();
