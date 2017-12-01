@@ -8,7 +8,7 @@
 #include "Customer.h"
 using namespace std;
 
-
+////Initialize the class, objects, functions and variables
 class Account
 {
 public:

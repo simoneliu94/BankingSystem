@@ -6,7 +6,8 @@
 
 using namespace std;
 
-
+//Initialize the class, functions and variables
+//Inherited from Account class
 class BusinessChecking:public Account
 {
 public:

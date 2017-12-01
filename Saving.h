@@ -6,6 +6,8 @@
 
 using namespace std;
 
+//Initialize the class, functions and variables
+//Inherited from Account class
 class Saving:public Account
 {
 public:

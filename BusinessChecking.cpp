@@ -7,11 +7,14 @@ BusinessChecking::BusinessChecking()
     charge_rate = 14;
 }
 
+//Create a business checking account with parameters id, balance, date and customer and pass them to Account class
 BusinessChecking::BusinessChecking(string a_id, double a_bal, string a_date, Customer &a_cus):Account(a_id, a_bal, a_date, a_cus)
 {
     charge_rate = 14;
 }
 
+//Override the monthly_fee function from Account class
+//If the balance has less than $3,000 then charge $18 monthly fee to the account
 void BusinessChecking::monthly_fee()
 {
     if(balance<3000)

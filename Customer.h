@@ -7,8 +7,10 @@
 
 using namespace std;
 
+//Forward-declare Account class
 class Account;
 
+//Initialize the class, functions and variables
 class Customer
 {
 public:

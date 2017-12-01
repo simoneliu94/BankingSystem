@@ -1,3 +1,8 @@
+/*
+Author: Y Liu (Simone)
+Project: C++ Banking System
+*/
+
 #include <vector>
 #include <iostream>
 #include <string>
@@ -11,7 +16,6 @@
 #include "BusinessSaving.h"
 #include "Credit.h"
 
-
 using namespace std;
 
 int main()
@@ -21,6 +25,7 @@ int main()
     cout << "-------------------------------------------" << endl;
 
     //Creates a customer
+    //To create a customer, the account should have at least ID and Name, the account can also have address, phone and email
     Customer c1("12345", "Simone");
     c1.set_address("123 Market St.");
     c1.set_phone("910-000-1234");
@@ -36,6 +41,8 @@ int main()
     c2.viewInfo();
 
     //Creates different types of accounts
+    //To create a Checking, Saving, Business account, the account should have at least ID, balance, limit, opening date, and a customer
+    //To create a Credit account, the account should have at least ID, balance, limit, opening date, and a customer
     Checking checking1("C123", 127.25, "2017-11-26", c1);
     Checking checking2("C489", 85.55, "2017-11-22", c1);
     Saving saving3("S4811", 1000, "2017-11-20", c1);
@@ -63,9 +70,11 @@ int main()
     c1.count_acc();
     c2.count_acc();
 
+    //Add customers to Customers array
     vector<Customer> Customers;
     Customers.push_back(c1);
 
+    //Add bank accounts to Accounts array
     vector<Account> Accounts;
     Accounts.push_back(checking1);
 
@@ -95,4 +104,10 @@ int main()
     b_checking1.print_all_trans();
     b_saving1.print_all_trans();
     credit1.print_all_trans();
+
+    cout << "-------------------------------------------" << endl;
+    cout << "Extra credit - Keep track of credit score every month" <<endl;
+    //If customer spends less than 30% of the limit each month then add 5 points to their credit score, else deduct 1 point
+    cout <<"Account "<< credit1.get_accountId()<< ". Credit score: "<<credit1.get_credit_score() << endl;
+    credit1.credit_status();
 }
